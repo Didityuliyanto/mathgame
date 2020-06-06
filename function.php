@@ -4,7 +4,7 @@ class Crud
 	private $db;
 	function __construct()
 	{
-        $this->db= new mysqli("sql101.epizy.com", "epiz_25937819", "xVDVolFQKp58yl", "epiz_25937819_gamemath"); //Host ,user ,password ,dbname  
+        $this->db= new mysqli("localhost", "root", "", "gamemath");
 	}
 	function create($table,$data){
 		$count = 0;
@@ -35,10 +35,6 @@ class Crud
 			$field .= "$key = '$value'";
 		}
 		$query = $this->db->prepare("UPDATE `$table` SET $field WHERE $col = '$isi'");
-		return $query->execute();
-	}
-	function delete($table,$where){
-		$query	= $this->db->prepare("DELETE FROM {$table} {$where}");
 		return $query->execute();
 	}
 }
