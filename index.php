@@ -3,6 +3,15 @@ session_start();
 if($_GET['mode']=='new'){
     session_unset();
 }
+if(isset($_POST['submit'])){
+    if(!isset($_SESSION['email'])){
+        $_SESSION['name'] = $_POST['name'];
+        $_SESSION['email'] = $_POST['email'];
+    }
+    $_SESSION['lives'] = 5;
+    $_SESSION['score'] = 0;
+    header('Location: Soal1.php');
+}
 ?>
 <html>
 <head>
@@ -38,15 +47,3 @@ if($_GET['mode']=='new'){
 </div>      
     </body>
 </html>
-<?php
-
-if(isset($_POST['submit'])){
-    if(!isset($_SESSION['email'])){
-        $_SESSION['name'] = $_POST['name'];
-        $_SESSION['email'] = $_POST['email'];
-    }
-    $_SESSION['lives'] = 5;
-    $_SESSION['score'] = 0;
-    header('Location: soal1.php');
-}
-?>
