@@ -4,7 +4,7 @@ $a = rand(0,20);
 $b = rand(0,20);
 if($_SESSION['lives'] <= 0){
     echo $_SESSION['lives']; 
-    header("Location: over.php");
+    header("Location: selesai.php");
 }
 ?>
 <html>
@@ -31,7 +31,7 @@ if($_SESSION['lives'] <= 0){
 <?php 
 echo $jawaban;
 if($_POST['jawab']){
-    if($_POST['isi'] == $_POST['a']+$_POST['b']){
+    if($_POST['jawab'] == $_POST['a']+$_POST['b']){
         $_SESSION['score'] += 10;
         header("Location: hasil.php?result=success");
     }else{
