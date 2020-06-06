@@ -6,7 +6,7 @@ if($_GET['result'] == 'success'){
     $result = "Hallo ".$_SESSION['name']." Sayang jawaban Anda salah… tetap semangat ya !!!";
 }
 if(isset($_GET['submit'])){
-	header('Location: soal1.php');
+	header('Location: Soal1.php');
 }
 ?>
 <html>
