@@ -2,7 +2,7 @@
 session_start();
 if($_SESSION['lives'] > 0){
     echo $_SESSION['lives']; 
-    header("Location: soa1.php");
+    header("Location: Soa1.php");
 }
 if (isset($_GET['submit'])) {
 	header('Location: index.php');
